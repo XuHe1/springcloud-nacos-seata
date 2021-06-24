@@ -1,0 +1,26 @@
+logging:
+  level:
+    io:
+      seata: debug
+server:
+  port: 9092
+spring:
+  application:
+    name: storage-service
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: storage-service-group
+    nacos:
+      discovery:
+        server-addr: 10.0.2.32:30112
+        username: dev
+        password: 123456
+        namespace: a474cd9f-ea9d-45bc-9558-50440012fe83
+        group: SEATA_GROUP
+  datasource:
+    druid:
+      driverClassName: com.mysql.jdbc.Driver
+      password: 123456
+      url: jdbc:mysql://localhost:3306/seata_storage?serverTimezone=Asia/Shanghai&characterEncoding=utf-8&characterSetResults=utf8&useSSL=true&allowMultiQueries=true
+      username: root

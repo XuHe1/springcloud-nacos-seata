@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/base-framework-mysql-support/base-framework-mysql-support.iml" filepath="$PROJECT_DIR$/base-framework-mysql-support/base-framework-mysql-support.iml" />
+      <module fileurl="file://$PROJECT_DIR$/order-service/order-service.iml" filepath="$PROJECT_DIR$/order-service/order-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud-nacos-seata.iml" filepath="$PROJECT_DIR$/springcloud-nacos-seata.iml" />
+      <module fileurl="file://$PROJECT_DIR$/storage-service/storage-service.iml" filepath="$PROJECT_DIR$/storage-service/storage-service.iml" />
+    </modules>
+  </component>
+</project>
