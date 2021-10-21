@@ -8,20 +8,43 @@ spring:
   application:
     name: order-service
   cloud:
-    alibaba:
-      seata:
-        tx-service-group: order-service-group
     nacos:
       discovery:
-        server-addr: 10.0.2.32:30112
-        username: dev
-        password: 123456
-        namespace: a474cd9f-ea9d-45bc-9558-50440012fe83
+        server-addr: 127.0.0.1:8849
+        username: nacos
+        password: nacos
+        namespace: baeba154-3521-468d-b5de-8efb86cbf3d9
         # 微服务必须在一个组，否则服务发现不了，但Seata-server 可以在不同的组中
         group: SEATA_GROUP
+
   datasource:
     druid:
-      driverClassName: com.mysql.jdbc.Driver
+      driverClassName: com.mysql.cj.jdbc.Driver
       password: 123456
-      url: jdbc:mysql://localhost:3306/seata_order?serverTimezone=Asia/Shanghai&characterEncoding=utf-8&characterSetResults=utf8&useSSL=true&allowMultiQueries=true
+      url: jdbc:mysql://localhost:3307/seata_order?serverTimezone=Asia/Shanghai&characterEncoding=utf-8&characterSetResults=utf8&useSSL=true&allowMultiQueries=true
       username: root
+seata:
+  application-id: ${spring.application.name}
+  tx-service-group: order-service-group
+  # 使用 druid  代理报错！
+  enable-auto-data-source-proxy: false
+  config:
+    type: nacos
+    nacos:
+      server-addr: 127.0.0.1:8849
+      username: nacos
+      password: nacos
+      namespace: baeba154-3521-468d-b5de-8efb86cbf3d9
+      # 微服务必须在一个组，否则服务发现不了，但Seata-server 可以在不同的组中
+      group: SEATA_GROUP
+      dataId: "seataServer.properties"
+  registry:
+    type: nacos
+    nacos:
+      server-addr: 127.0.0.1:8849
+      username: nacos
+      password: nacos
+      namespace: baeba154-3521-468d-b5de-8efb86cbf3d9
+      # 微服务必须在一个组，否则服务发现不了，但Seata-server 可以在不同的组中
+      group: SEATA_GROUP
+
