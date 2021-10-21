@@ -24,6 +24,7 @@ spring:
 
 seata:
   application-id: ${spring.application.name}
+  # 这里的配置对应 seataServer.properties 中的 service.vgroupMapping.storage-service-group=default
   tx-service-group: storage-service-group
   enable-auto-data-source-proxy: false
   config:

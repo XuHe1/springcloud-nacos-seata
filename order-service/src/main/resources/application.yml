@@ -25,6 +25,7 @@ spring:
       username: root
 seata:
   application-id: ${spring.application.name}
+  # 这里的配置对应 seataServer.properties 中的 service.vgroupMapping.order-service-group=default
   tx-service-group: order-service-group
   # 使用 druid  代理报错！
   enable-auto-data-source-proxy: false
